@@ -6,12 +6,14 @@ import {
 
 interface SpotifyExampleState {
   displayName: string,
-  product: string
+  product: string,
+  externalUrl: string,
 }
 
 const initialState: SpotifyExampleState = {
   displayName: '',
   product: '',
+  externalUrl: ''
 };
 
 export const spotifyexampleSlice = createSlice({
@@ -24,13 +26,17 @@ export const spotifyexampleSlice = createSlice({
     setProduct: (state, action: PayloadAction<string>) => {
       state.product = action.payload;
     },
+    setExternalUrl: (state, action: PayloadAction<string>) => {
+      state.externalUrl = action.payload;
+    },
   },
 });
 
-export const { setDisplayName, setProduct } = spotifyexampleSlice.actions;
+export const { setDisplayName, setProduct, setExternalUrl } = spotifyexampleSlice.actions;
 
 export const selectDisplayName = (state: RootState) => state.spotifyExample.displayName;
 export const selectProduct = (state: RootState) => state.spotifyExample.product;
+export const selectExternalUrL = (state: RootState) => state.spotifyExample.externalUrl;
 
 export const setUserProfileAsync = (accessToken: string): AppThunk => dispatch => {
   const myHeaders = new Headers();
@@ -44,6 +50,7 @@ export const setUserProfileAsync = (accessToken: string): AppThunk => dispatch =
       console.log(data);
       dispatch(setDisplayName(data.display_name ? data.display_name : data.id));
       dispatch(setProduct(data.product));
+      dispatch(setProduct(data.externalUrl.spotify));
     }).catch((error) => {
       console.log(error);
       if (error instanceof XMLHttpRequest) {
