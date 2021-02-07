@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { useDencrypt } from "use-dencrypt-effect";
 
-const values = ["algorithm love", "a short film about", "music", "and acid"];
+const values = ["algorithm love", "a web based app", "that matches users", "by playlist"];
 
 const Love = () => {
   const { result, dencrypt } = useDencrypt();
@@ -14,7 +14,7 @@ const Love = () => {
       dencrypt(values[i]);
 
       i = i === values.length - 1 ? 0 : i + 1;
-    }, 2000);
+    }, 2500);
 
     return () => clearInterval(action);
   }, []);
