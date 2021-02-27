@@ -15,9 +15,10 @@
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-loader-spinner": "^4.0.0",
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
-    "typescript": "^3.8.3",
+    "typescript": "^3.9.9",
     "use-dencrypt-effect": "^1.0.2"
   },
   "scripts": {

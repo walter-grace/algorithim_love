@@ -12,9 +12,6 @@ export function SpotifyExample() {
   const displayName = useSelector(selectDisplayName);
   const product = useSelector(selectProduct);
   
-
-
-  console.log(displayName)
   return (
     <div className={styles.column}>
       <Love/>
@@ -29,12 +26,19 @@ export function SpotifyExample() {
           <button
           className={styles.button}
           aria-label="Log in using OAuth 2.0"
-          onClick={() => window.open("https://open.spotify.com/user/nico.zahniser")}  >
-          Connect my playlist
+          onClick={() => window.open("https://open.spotify.com/user/" + displayName)}  >
+          Go to my Spotify
           </button>
+          <hr />
+          <br />
           </div>
           <div className={styles.row}>
-          Then hold for your Match!
+          <button
+          className={styles.button}
+          aria-label="Log in using OAuth 2.0"
+          onClick={() => window.open("https://open.spotify.com/user/" + displayName)}  >
+          Match Me
+          </button>  
           </div>
       </div>
       }
