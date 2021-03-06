@@ -53,7 +53,7 @@ export function SpotifyExample() {
           <button
           className={styles.button}
           aria-label="Log in using OAuth 2.0"
-          onClick={() => window.open("https://6043b2afa5d98f55c8a2c073--objective-bardeen-5534ad.netlify.app")}  >
+          onClick={() => window.open("https://6043bc129a805097e7d21acf--objective-bardeen-5534ad.netlify.app")}  >
           Prototype
           </button>  
           </div>
